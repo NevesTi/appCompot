@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View,Text, Button } from "react-native";
+import { View,Text, Button,StyleSheet } from "react-native";
 
 interface Props{
 
@@ -26,12 +26,36 @@ export default class ClassComponent extends Component<Props, State> {
   
     render() {
         return (
-            <View>
+            <View style={styles.telacal1}>
             <Text>{this.state.contador}</Text>
-            <Button title="Clique!" onPress={() => { this.increment() }} />
+            <View style={styles.button}>
+            <Button  title="Clique!"  onPress={() => { this.increment() }}   />
+            </View>
         </View>
         );
 
     }
 
 }
+
+const styles = StyleSheet.create({
+    container:{
+             
+    
+    },
+telacal1:{
+    alignSelf: 'center',
+    top:'40%'   
+    
+         
+},
+button:{
+    justifyContent: 'flex-end',
+    alignSelf: 'center',
+
+
+
+}
+
+
+},);

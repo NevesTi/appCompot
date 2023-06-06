@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { View, Text, Button } from "react-native";
+import { View, Text, Button, StyleSheet } from "react-native";
 
 export default function FunctionComponent() {
 
@@ -9,9 +9,38 @@ export default function FunctionComponent() {
         setcontador(contador + 1);
     }
     return (
-        <View>
+        <View style={styles.telacal}>
             <Text>{contador}</Text>
+            <View style={styles.button}>
             <Button title="Clique!" onPress={() => { increment() }} />
+            </View>
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    container:{
+        flex:1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginBottom: 50,
+        
+
+    },
+    telacal:{
+        justifyContent: 'flex-end',
+        height:'60%',
+        alignSelf: 'center',
+
+        
+        
+        
+    },
+    button:{
+        alignSelf: 'center',
+    
+
+    }
+    
+    
+    });
